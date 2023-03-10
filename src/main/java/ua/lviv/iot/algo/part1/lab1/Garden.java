@@ -17,7 +17,7 @@ public class Garden {
     public void plantFlowers(int count){
         setNumberOfFlowers(getNumberOfFlowers() + count);
     }
-    public void remoweFlowers(int count){
+    public void removeFlowers(int count){
         if(getNumberOfFlowers()<= count){
             setNumberOfFlowers(0);
         }
@@ -42,10 +42,6 @@ public class Garden {
         for(int i = 0;i<arrOfGardens.length; i++){
             System.out.println(arrOfGardens[i].toString());
         }
-        garden4.remoweFlowers(10);
-        for(int i = 0;i<arrOfGardens.length; i++){
-            System.out.println(arrOfGardens[i].toString());
-        }
-
+        garden2.removeFlowers(10);
     }
 }
