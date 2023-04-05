@@ -12,6 +12,7 @@ public abstract class Garden {
     private int numberOfFlowers;
 
     public abstract boolean hasOrchard();
+
     public abstract boolean hasVegetableGarden();
 
 }

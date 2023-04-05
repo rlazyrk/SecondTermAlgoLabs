@@ -7,18 +7,20 @@ import lombok.*;
 @Getter
 @Setter
 @ToString(callSuper = true)
-public class DecorativeGarden extends Garden{
+public class DecorativeGarden extends Garden {
 
     int numberOfFlowerBeds;
     boolean hasVerticalGarden;
 
 
-    public void buildVerticalGarden(){
+    public void buildVerticalGarden() {
         setHasVerticalGarden(true);
     }
-    public void removeVerticalGarden(){
+
+    public void removeVerticalGarden() {
         setHasVerticalGarden(false);
     }
+
     @Override
     public boolean hasOrchard() {
         return false;
@@ -28,9 +30,10 @@ public class DecorativeGarden extends Garden{
     public boolean hasVegetableGarden() {
         return false;
     }
-    public DecorativeGarden(int numberOfFlowerBeds, boolean hasVerticalGarden,double area, int numberOfFlowers){
+
+    public DecorativeGarden(int numberOfFlowerBeds, boolean hasVerticalGarden, double area, int numberOfFlowers) {
         super(area, numberOfFlowers);
-        this.hasVerticalGarden=hasVerticalGarden;
-        this.numberOfFlowerBeds=numberOfFlowerBeds;
+        this.hasVerticalGarden = hasVerticalGarden;
+        this.numberOfFlowerBeds = numberOfFlowerBeds;
     }
 }

@@ -7,20 +7,21 @@ import lombok.*;
 @Getter
 @Setter
 @ToString(callSuper = true)
-public class UniversityGarden extends Garden{
+public class UniversityGarden extends Garden {
     private int numberOfSculpture;
 
-    public void addSculptures(int count){
-        setNumberOfSculpture(numberOfSculpture+count);
+    public void addSculptures(int count) {
+        setNumberOfSculpture(numberOfSculpture + count);
     }
-    public void removeSculptures(int count){
+
+    public void removeSculptures(int count) {
         if (numberOfSculpture < count) {
             setNumberOfSculpture(0);
-        }
-        else {
+        } else {
             setNumberOfSculpture(numberOfSculpture - count);
         }
     }
+
     @Override
     public boolean hasOrchard() {
         return false;
@@ -31,7 +32,7 @@ public class UniversityGarden extends Garden{
         return false;
     }
 
-    public UniversityGarden(double area, int numOfFlower,int numberOfSculpture ){
+    public UniversityGarden(double area, int numOfFlower, int numberOfSculpture) {
         super(area, numOfFlower);
         this.numberOfSculpture = numberOfSculpture;
     }
