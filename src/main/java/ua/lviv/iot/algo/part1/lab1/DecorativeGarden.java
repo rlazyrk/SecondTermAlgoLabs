@@ -1,6 +1,9 @@
 package ua.lviv.iot.algo.part1.lab1;
 
-import lombok.*;
+import lombok.NoArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 @NoArgsConstructor
 @Getter
@@ -8,8 +11,8 @@ import lombok.*;
 @ToString(callSuper = true)
 public class DecorativeGarden extends Garden {
 
-    int numberOfFlowerBeds;
-    boolean hasVerticalGarden;
+    private int numberOfFlowerBeds;
+    private boolean hasVerticalGarden;
 
 
     public void buildVerticalGarden() {
@@ -30,7 +33,10 @@ public class DecorativeGarden extends Garden {
         return false;
     }
 
-    public DecorativeGarden(int numberOfFlowerBeds, boolean hasVerticalGarden, double area, int numberOfFlowers) {
+    public DecorativeGarden(final int numberOfFlowerBeds,
+                            final boolean hasVerticalGarden,
+                            final double area,
+                            final int numberOfFlowers) {
         super(area, numberOfFlowers);
         this.hasVerticalGarden = hasVerticalGarden;
         this.numberOfFlowerBeds = numberOfFlowerBeds;

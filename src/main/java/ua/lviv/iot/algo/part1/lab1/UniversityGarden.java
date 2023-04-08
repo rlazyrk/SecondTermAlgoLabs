@@ -1,6 +1,9 @@
 package ua.lviv.iot.algo.part1.lab1;
 
-import lombok.*;
+import lombok.NoArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 @NoArgsConstructor
 @Getter
@@ -9,11 +12,11 @@ import lombok.*;
 public class UniversityGarden extends Garden {
     private int numberOfSculpture;
 
-    public void addSculptures(int count) {
+    public void addSculptures(final int count) {
         setNumberOfSculpture(numberOfSculpture + count);
     }
 
-    public void removeSculptures(int count) {
+    public void removeSculptures(final int count) {
         if (numberOfSculpture < count) {
             setNumberOfSculpture(0);
         } else {
@@ -31,7 +34,9 @@ public class UniversityGarden extends Garden {
         return false;
     }
 
-    public UniversityGarden(double area, int numOfFlower, int numberOfSculpture) {
+    public UniversityGarden(final double area,
+                            final int numOfFlower,
+                            final int numberOfSculpture) {
         super(area, numOfFlower);
         this.numberOfSculpture = numberOfSculpture;
     }
