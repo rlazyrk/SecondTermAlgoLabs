@@ -1,8 +1,7 @@
-package ua.lviv.iot.algo.part1.lab2;
+package ua.lviv.iot.algo.part1.lab1;
 
 import lombok.*;
 
-@AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
@@ -11,17 +10,13 @@ public class BotanicGarden extends Garden {
     private int numberOfGreenhouse;
 
     public void buildGreenhouse() {
-        setNumberOfGreenhouse(getNumberOfGreenhouse() + 1);
-    }
-
+        setNumberOfGreenhouse(getNumberOfGreenhouse() + 1);}
     public void destroyGreenhouse() {
         if (numberOfGreenhouse == 1 | numberOfGreenhouse == 0) {
-            setNumberOfGreenhouse(0);
-        } else {
-            setNumberOfGreenhouse(numberOfGreenhouse - 1);
-        }
+            setNumberOfGreenhouse(0);}
+        else {
+            setNumberOfGreenhouse(numberOfGreenhouse - 1);}
     }
-
     @Override
     public boolean hasOrchard() {
         return true;

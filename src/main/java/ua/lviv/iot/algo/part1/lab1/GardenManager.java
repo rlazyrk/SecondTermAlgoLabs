@@ -1,11 +1,14 @@
-package ua.lviv.iot.algo.part1.lab2;
+package ua.lviv.iot.algo.part1.lab1;
 
-import javax.swing.event.MenuDragMouseListener;
 import java.util.LinkedList;
 import java.util.List;
 
 public class GardenManager {
     private final List<Garden> gardens = new LinkedList<>();
+
+    List<Garden> getGardens(){
+        return gardens;
+    }
 
     public List<Garden> findAllWithOrchard() {
         return gardens.stream().filter(garden -> garden.hasOrchard()).toList();
