@@ -9,7 +9,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString(callSuper = true)
-public class UniversityGarden extends Garden {
+public final class UniversityGarden extends Garden {
     private int numberOfSculpture;
 
     public void addSculptures(final int count) {

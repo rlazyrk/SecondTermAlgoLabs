@@ -4,18 +4,16 @@ import lombok.NoArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-
 @NoArgsConstructor
 @Getter
 @Setter
 @ToString(callSuper = true)
-public class BotanicGarden extends Garden {
+public final class BotanicGarden extends Garden {
     private int numberOfGreenhouse;
 
     public void buildGreenhouse() {
         setNumberOfGreenhouse(getNumberOfGreenhouse() + 1);
     }
-
     public void destroyGreenhouse() {
         if (numberOfGreenhouse == 1 | numberOfGreenhouse == 0) {
             setNumberOfGreenhouse(0);
