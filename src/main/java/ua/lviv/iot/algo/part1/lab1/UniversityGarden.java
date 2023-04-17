@@ -24,6 +24,14 @@ public final class UniversityGarden extends Garden {
         }
     }
 
+    public String getHeaders() {
+        return super.getHeaders() + "," + "numberOfSculpture";
+    }
+
+    public String toCVS() {
+        return super.toCVS() + "," + numberOfSculpture;
+    }
+
     @Override
     public boolean hasOrchard() {
         return false;
@@ -41,4 +49,3 @@ public final class UniversityGarden extends Garden {
         this.numberOfSculpture = numberOfSculpture;
     }
 }
-

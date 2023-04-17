@@ -19,6 +19,7 @@
         <lombok.version>1.18.26</lombok.version>
         <maven.jacoco.version>0.8.9</maven.jacoco.version>
         <maven.pmd.version>3.15.0</maven.pmd.version>
+        <opencvs.version>5.5.1</opencvs.version>
     </properties>
 
     <dependencies>
@@ -36,7 +37,6 @@
             <version>${lombok.version}</version>
             <scope>compile</scope>
         </dependency>
-
         <dependency>
             <groupId>com.github.spotbugs</groupId>
             <artifactId>spotbugs-maven-plugin</artifactId>
@@ -67,6 +67,23 @@
             <groupId>org.jacoco</groupId>
             <artifactId>jacoco-maven-plugin</artifactId>
             <version>${maven.jacoco.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.opencsv</groupId>
+            <artifactId>opencsv</artifactId>
+            <version>${opencvs.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>RELEASE</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>RELEASE</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
@@ -174,6 +191,4 @@
             </plugin>
         </plugins>
     </build>
-
-
 </project>

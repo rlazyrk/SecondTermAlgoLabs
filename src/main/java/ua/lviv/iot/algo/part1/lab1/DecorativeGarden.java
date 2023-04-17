@@ -23,6 +23,17 @@ public final class DecorativeGarden extends Garden {
         setHasVerticalGarden(false);
     }
 
+    public String getHeaders() {
+        return super.getHeaders() + "," + "numberOfFlowerBeds,"
+                + " hasVerticalGarden";
+    }
+
+    public String toCVS() {
+        return super.toCVS() + "," + numberOfFlowerBeds
+                + "," + hasVerticalGarden;
+    }
+
+
     @Override
     public boolean hasOrchard() {
         return false;

@@ -29,5 +29,4 @@ public final class GardenManager {
     public void addGarden(final List<Garden> gardensToAdd) {
         gardens.addAll(gardensToAdd);
     }
-
 }

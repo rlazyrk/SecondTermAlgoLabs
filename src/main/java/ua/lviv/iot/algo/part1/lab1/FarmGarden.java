@@ -14,6 +14,16 @@ public final class FarmGarden extends Garden {
     private int numberOfTree;
     private int numberOfCrops;
 
+    public String getHeaders() {
+        return super.getHeaders() + "," + "numberOfTree, "
+                + "numberOfCrops";
+    }
+
+    public String toCVS() {
+        return super.toCVS() + "," + numberOfTree
+                + "," + numberOfCrops;
+    }
+
     @Override
     public boolean hasOrchard() {
         return true;
@@ -32,5 +42,4 @@ public final class FarmGarden extends Garden {
         this.numberOfCrops = numberOfCrops;
         this.numberOfTree = numberOfTree;
     }
-
 }

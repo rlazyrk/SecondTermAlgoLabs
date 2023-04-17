@@ -19,5 +19,17 @@ public abstract class Garden {
 
     public abstract boolean hasVegetableGarden();
 
-}
+    /**
+     * give us header of the fields of this class
+     */
+    public String getHeaders() {
+        return "areaInSquareMeter, numberOfFlowers";
+    }
 
+    /**
+     * give us what we have to write into CSV file
+     */
+    public String toCVS() {
+        return areaInSquareMeter + "," + numberOfFlowers;
+    }
+}
