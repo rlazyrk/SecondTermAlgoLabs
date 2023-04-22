@@ -1,9 +1,10 @@
-package ua.lviv.iot.algo.part1.lab1;
+package ua.lviv.iot.algo.part1.lab1.models;
 
 import lombok.NoArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+
 
 @NoArgsConstructor
 @Getter
@@ -19,8 +20,8 @@ public final class FarmGarden extends Garden {
                 + "numberOfCrops";
     }
 
-    public String toCVS() {
-        return super.toCVS() + "," + numberOfTree
+    public String toCSV() {
+        return super.toCSV() + "," + numberOfTree
                 + "," + numberOfCrops;
     }
 

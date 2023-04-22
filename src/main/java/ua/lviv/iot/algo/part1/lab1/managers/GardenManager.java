@@ -1,4 +1,6 @@
-package ua.lviv.iot.algo.part1.lab1;
+package ua.lviv.iot.algo.part1.lab1.managers;
+
+import ua.lviv.iot.algo.part1.lab1.models.Garden;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -6,7 +8,7 @@ import java.util.List;
 public final class GardenManager {
     private final List<Garden> gardens = new LinkedList<>();
 
-    List<Garden> getGardens() {
+    public List<Garden> getGardens() {
         return gardens;
     }
 

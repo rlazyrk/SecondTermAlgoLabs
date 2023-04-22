@@ -1,4 +1,4 @@
-package ua.lviv.iot.algo.part1.lab1;
+package ua.lviv.iot.algo.part1.lab1.models;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
@@ -29,7 +29,7 @@ public abstract class Garden {
     /**
      * give us what we have to write into CSV file
      */
-    public String toCVS() {
+    public String toCSV() {
         return areaInSquareMeter + "," + numberOfFlowers;
     }
 }
