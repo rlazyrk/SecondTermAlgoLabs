@@ -1,4 +1,4 @@
-package ua.lviv.iot.algo.part1.lab1;
+package ua.lviv.iot.algo.part1.lab1.models;
 
 import lombok.NoArgsConstructor;
 import lombok.Getter;
@@ -22,6 +22,17 @@ public final class DecorativeGarden extends Garden {
     public void removeVerticalGarden() {
         setHasVerticalGarden(false);
     }
+
+    public String getHeaders() {
+        return super.getHeaders() + "," + "numberOfFlowerBeds,"
+                + " hasVerticalGarden";
+    }
+
+    public String toCSV() {
+        return super.toCSV() + "," + numberOfFlowerBeds
+                + "," + hasVerticalGarden;
+    }
+
 
     @Override
     public boolean hasOrchard() {

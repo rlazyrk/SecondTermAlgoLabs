@@ -1,4 +1,4 @@
-package ua.lviv.iot.algo.part1.lab1;
+package ua.lviv.iot.algo.part1.lab1.models;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
@@ -19,5 +19,17 @@ public abstract class Garden {
 
     public abstract boolean hasVegetableGarden();
 
-}
+    /**
+     * give us header of the fields of this class
+     */
+    public String getHeaders() {
+        return "areaInSquareMeter, numberOfFlowers";
+    }
 
+    /**
+     * give us what we have to write into CSV file
+     */
+    public String toCSV() {
+        return areaInSquareMeter + "," + numberOfFlowers;
+    }
+}

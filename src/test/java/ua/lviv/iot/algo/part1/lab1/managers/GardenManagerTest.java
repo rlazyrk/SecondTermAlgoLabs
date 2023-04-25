@@ -1,8 +1,12 @@
-package ua.lviv.iot.algo.part1.lab1;
+package ua.lviv.iot.algo.part1.lab1.managers;
 
 import junit.framework.TestCase;
 import org.junit.Before;
 import org.junit.Test;
+import ua.lviv.iot.algo.part1.lab1.models.BotanicGarden;
+import ua.lviv.iot.algo.part1.lab1.models.FarmGarden;
+import ua.lviv.iot.algo.part1.lab1.models.Garden;
+import ua.lviv.iot.algo.part1.lab1.models.UniversityGarden;
 
 import java.util.LinkedList;
 import java.util.List;

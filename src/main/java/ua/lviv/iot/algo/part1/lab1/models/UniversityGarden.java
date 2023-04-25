@@ -1,4 +1,4 @@
-package ua.lviv.iot.algo.part1.lab1;
+package ua.lviv.iot.algo.part1.lab1.models;
 
 import lombok.NoArgsConstructor;
 import lombok.Getter;
@@ -24,6 +24,14 @@ public final class UniversityGarden extends Garden {
         }
     }
 
+    public String getHeaders() {
+        return super.getHeaders() + "," + "numberOfSculpture";
+    }
+
+    public String toCSV() {
+        return super.toCSV() + "," + numberOfSculpture;
+    }
+
     @Override
     public boolean hasOrchard() {
         return false;
@@ -41,4 +49,3 @@ public final class UniversityGarden extends Garden {
         this.numberOfSculpture = numberOfSculpture;
     }
 }
-

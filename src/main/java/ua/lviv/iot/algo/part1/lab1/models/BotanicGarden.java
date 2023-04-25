@@ -1,9 +1,10 @@
-package ua.lviv.iot.algo.part1.lab1;
+package ua.lviv.iot.algo.part1.lab1.models;
 
 import lombok.NoArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+
 @NoArgsConstructor
 @Getter
 @Setter
@@ -14,6 +15,7 @@ public final class BotanicGarden extends Garden {
     public void buildGreenhouse() {
         setNumberOfGreenhouse(getNumberOfGreenhouse() + 1);
     }
+
     public void destroyGreenhouse() {
         if (numberOfGreenhouse == 1 | numberOfGreenhouse == 0) {
             setNumberOfGreenhouse(0);
@@ -31,6 +33,15 @@ public final class BotanicGarden extends Garden {
     public boolean hasVegetableGarden() {
         return false;
     }
+
+    public String getHeaders() {
+        return super.getHeaders() + "," + "numberOfGreenHouse";
+    }
+
+    public String toCSV() {
+        return super.toCSV() + "," + numberOfGreenhouse;
+    }
+
 
     public BotanicGarden(final double area,
                          final int numberOfGreenhouse,

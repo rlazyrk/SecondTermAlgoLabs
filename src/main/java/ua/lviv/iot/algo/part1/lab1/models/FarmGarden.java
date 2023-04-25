@@ -1,9 +1,10 @@
-package ua.lviv.iot.algo.part1.lab1;
+package ua.lviv.iot.algo.part1.lab1.models;
 
 import lombok.NoArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+
 
 @NoArgsConstructor
 @Getter
@@ -13,6 +14,16 @@ public final class FarmGarden extends Garden {
 
     private int numberOfTree;
     private int numberOfCrops;
+
+    public String getHeaders() {
+        return super.getHeaders() + "," + "numberOfTree, "
+                + "numberOfCrops";
+    }
+
+    public String toCSV() {
+        return super.toCSV() + "," + numberOfTree
+                + "," + numberOfCrops;
+    }
 
     @Override
     public boolean hasOrchard() {
@@ -32,5 +43,4 @@ public final class FarmGarden extends Garden {
         this.numberOfCrops = numberOfCrops;
         this.numberOfTree = numberOfTree;
     }
-
 }

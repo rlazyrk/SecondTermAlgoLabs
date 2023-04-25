@@ -1,0 +1,8 @@
+areaInSquareMeter, numberOfFlowers,numberOfGreenHouse
+10.0,342,11
+areaInSquareMeter, numberOfFlowers,numberOfFlowerBeds, hasVerticalGarden
+10.44,422,10,true
+areaInSquareMeter, numberOfFlowers,numberOfTree, numberOfCrops
+22.44,22,44,44
+areaInSquareMeter, numberOfFlowers,numberOfSculpture
+10.11,134,11
