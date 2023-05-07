@@ -6,6 +6,8 @@ import ua.lviv.iot.algo.part1.lab1.models.BotanicGarden;
 import ua.lviv.iot.algo.part1.lab1.models.Garden;
 
 import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -24,4 +26,18 @@ public final class GardenService {
         gardens.put(garden.getId(), garden);
         return garden;
     }
+    public void changeId(Integer id){
+        gardens.get(id).setId(id);
+    }
+    public LinkedList<BotanicGarden> allGardens(){
+        List list = new LinkedList(gardens.values());
+        return (LinkedList<BotanicGarden>) list;
+    }
+    public BotanicGarden findById(Integer id){
+        return (BotanicGarden) gardens.get(id);
+    }
+    public void replaceBotanicGarden(Integer id, BotanicGarden garden){
+        gardens.replace(id, garden);
+    }
+
 }

@@ -1,6 +1,7 @@
 package ua.lviv.iot.algo.part1.lab1.controller;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
@@ -15,14 +16,17 @@ import org.springframework.web.bind.annotation.PutMapping;
 import ua.lviv.iot.algo.part1.lab1.models.BotanicGarden;
 import ua.lviv.iot.algo.part1.lab1.service.GardenService;
 
-
-import java.util.LinkedList;
 import java.util.List;
+
 
 @RestController
 @RequestMapping("/gardens")
 public final class GardenController {
-    private GardenService service = new GardenService();
+    private GardenService service;
+    @Autowired
+    public GardenController(GardenService service) {
+        this.service = service;
+    }
 
     @GetMapping(path = "/{id}")
     public BotanicGarden getBotanicGarden(@PathVariable("id") final Integer id) {
@@ -36,22 +40,24 @@ public final class GardenController {
 
     @DeleteMapping(path = "/{id}")
     public ResponseEntity<BotanicGarden> deleteBotanicGarden(@PathVariable final Integer id) {
-        HttpStatus status = service.getGardens().remove(id) == null ? HttpStatus.NOT_FOUND : HttpStatus.OK;
-        return ResponseEntity.status(status).build();
+        if(service.findById(id)!=null){
+            service.deleteBotanicGarden(id);
+            return ResponseEntity.status(HttpStatus.OK).build();
+        }
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
 
     @GetMapping
     public List<BotanicGarden> getGardens() {
-        List list = new LinkedList(service.getGardens().values());
-        return list;
+        return service.allGardens();
     }
 
     @PutMapping(path = "/{id}")
-    public ResponseEntity updateMethStone(@PathVariable("id") final Integer id,
+    public ResponseEntity updateGarden(@PathVariable("id") final Integer id,
                                           final @RequestBody BotanicGarden garden) {
-        if (service.getGardens().containsKey(id)) {
-            service.getGardens().replace(id, garden);
-            service.getGardens().get(id).setId(id);
+        if (service.findById(id)!=null) {
+            service.replaceBotanicGarden(id,garden);
+            service.changeId(id);
             return ResponseEntity.status(HttpStatus.OK).build();
         }
         return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
