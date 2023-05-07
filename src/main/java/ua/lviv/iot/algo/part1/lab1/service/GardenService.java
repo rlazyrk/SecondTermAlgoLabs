@@ -1,6 +1,5 @@
 package ua.lviv.iot.algo.part1.lab1.service;
 
-import lombok.Getter;
 import org.springframework.stereotype.Service;
 import ua.lviv.iot.algo.part1.lab1.models.BotanicGarden;
 import ua.lviv.iot.algo.part1.lab1.models.Garden;
@@ -11,11 +10,20 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
-@Getter
+
 @Service
 public final class GardenService {
     private Map<Integer, Garden> gardens = new HashMap<>();
     private AtomicInteger idCounter = new AtomicInteger();
+
+    private static GardenService defaultService = new GardenService();
+
+    public static GardenService getInstance() {
+        return defaultService;
+    }
+
+    private GardenService() {
+    }
 
     public void deleteBotanicGarden(final Integer id) {
         gardens.remove(id);
@@ -26,17 +34,21 @@ public final class GardenService {
         gardens.put(garden.getId(), garden);
         return garden;
     }
-    public void changeId(Integer id){
+
+    public void changeId(final Integer id) {
         gardens.get(id).setId(id);
     }
-    public LinkedList<BotanicGarden> allGardens(){
+
+    public LinkedList<BotanicGarden> allGardens() {
         List list = new LinkedList(gardens.values());
         return (LinkedList<BotanicGarden>) list;
     }
-    public BotanicGarden findById(Integer id){
+
+    public BotanicGarden findById(final Integer id) {
         return (BotanicGarden) gardens.get(id);
     }
-    public void replaceBotanicGarden(Integer id, BotanicGarden garden){
+
+    public void replaceBotanicGarden(final Integer id, final BotanicGarden garden) {
         gardens.replace(id, garden);
     }
 

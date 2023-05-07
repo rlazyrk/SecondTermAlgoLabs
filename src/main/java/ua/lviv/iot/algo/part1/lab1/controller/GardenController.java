@@ -17,21 +17,21 @@ import ua.lviv.iot.algo.part1.lab1.models.BotanicGarden;
 import ua.lviv.iot.algo.part1.lab1.service.GardenService;
 
 
-
 import java.util.List;
 
 @RestController
 @RequestMapping("/gardens")
 public final class GardenController {
     private GardenService service;
+
     @Autowired
-    public GardenController(GardenService service) {
-        this.service = service;
+    public GardenController() {
+        this.service = GardenService.getInstance();
     }
 
     @GetMapping(path = "/{id}")
     public BotanicGarden getBotanicGarden(@PathVariable("id") final Integer id) {
-        return (BotanicGarden) service.getGardens().get(id);
+        return service.findById(id);
     }
 
     @PostMapping
@@ -41,7 +41,7 @@ public final class GardenController {
 
     @DeleteMapping(path = "/{id}")
     public ResponseEntity<BotanicGarden> deleteBotanicGarden(@PathVariable final Integer id) {
-        if(service.findById(id)!=null){
+        if (service.findById(id) != null) {
             service.deleteBotanicGarden(id);
             return ResponseEntity.status(HttpStatus.OK).build();
         }
@@ -55,9 +55,9 @@ public final class GardenController {
 
     @PutMapping(path = "/{id}")
     public ResponseEntity updateGarden(@PathVariable("id") final Integer id,
-                                          final @RequestBody BotanicGarden garden) {
-        if (service.findById(id)!=null) {
-            service.replaceBotanicGarden(id,garden);
+                                       final @RequestBody BotanicGarden garden) {
+        if (service.findById(id) != null) {
+            service.replaceBotanicGarden(id, garden);
             service.changeId(id);
             return ResponseEntity.status(HttpStatus.OK).build();
         }
