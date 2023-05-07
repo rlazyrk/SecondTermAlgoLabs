@@ -1,24 +1,24 @@
 package ua.lviv.iot.algo.part1.lab1.models;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeAll;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class BotanicGardenTest {
 
-    BotanicGarden emptyTestGarden;
-    BotanicGarden testGarden;
+    static BotanicGarden emptyTestGarden;
+    static BotanicGarden testGarden;
 
-    @Before
-    public void setUp() {
+    @BeforeAll
+    public static void setUp() {
         emptyTestGarden = new BotanicGarden();
-        testGarden = new BotanicGarden(14.44, 7, 71);
+        testGarden = new BotanicGarden(14.44, 7, 71,1);
     }
 
     @Test
     public void buildGreenhouse() {
-        int expected = 8;
+        int expected = 7;
         testGarden.buildGreenhouse();
         assertEquals(expected, testGarden.getNumberOfGreenhouse());
     }
@@ -28,7 +28,7 @@ public class BotanicGardenTest {
         int expected = 6;
         testGarden.destroyGreenhouse();
         assertEquals(expected, testGarden.getNumberOfGreenhouse());
-        BotanicGarden testGarden2 = new BotanicGarden(1.1, 1, 7);
+        BotanicGarden testGarden2 = new BotanicGarden(1.1, 1, 7,1);
         int expected2 = 0;
         testGarden2.destroyGreenhouse();
         assertEquals(expected2, testGarden2.getNumberOfGreenhouse());
@@ -60,7 +60,7 @@ public class BotanicGardenTest {
 
     @Test
     public void testToString() {
-        String expected = "BotanicGarden(super=Garden(areaInSquareMeter=0.0, numberOfFlowers=0), numberOfGreenhouse=0)";
+        String expected = "BotanicGarden(super=Garden(areaInSquareMeter=0.0, numberOfFlowers=0, id=null), numberOfGreenhouse=0)";
         assertEquals(expected, emptyTestGarden.toString());
     }
 }

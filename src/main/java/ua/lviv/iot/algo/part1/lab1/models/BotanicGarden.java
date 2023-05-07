@@ -1,5 +1,7 @@
 package ua.lviv.iot.algo.part1.lab1.models;
 
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.NoArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -34,6 +36,8 @@ public final class BotanicGarden extends Garden {
         return false;
     }
 
+
+    @JsonIgnore
     public String getHeaders() {
         return super.getHeaders() + "," + "numberOfGreenHouse";
     }
@@ -45,8 +49,8 @@ public final class BotanicGarden extends Garden {
 
     public BotanicGarden(final double area,
                          final int numberOfGreenhouse,
-                         final int numberOfFlower) {
-        super(area, numberOfFlower);
+                         final int numberOfFlower, final Integer id) {
+        super(area, numberOfFlower, id);
         this.numberOfGreenhouse = numberOfGreenhouse;
     }
 }
