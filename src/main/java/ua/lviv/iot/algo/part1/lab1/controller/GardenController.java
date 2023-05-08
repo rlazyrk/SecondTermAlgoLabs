@@ -22,16 +22,17 @@ import java.util.List;
 @RestController
 @RequestMapping("/gardens")
 public final class GardenController {
-    private GardenService service;
 
     @Autowired
-    public GardenController() {
-        this.service = GardenService.getInstance();
-    }
+    private GardenService service;
+
 
     @GetMapping(path = "/{id}")
-    public BotanicGarden getBotanicGarden(@PathVariable("id") final Integer id) {
-        return service.findById(id);
+    public ResponseEntity getBotanicGarden(@PathVariable("id") final Integer id) {
+        if (service.findById(id) != null) {
+            return ResponseEntity.ok(service.findById(id));
+        }
+        return ResponseEntity.notFound().build();
     }
 
     @PostMapping

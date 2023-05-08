@@ -18,9 +18,6 @@ public final class GardenService {
 
     private static GardenService defaultService = new GardenService();
 
-    public static GardenService getInstance() {
-        return defaultService;
-    }
 
     private GardenService() {
     }
