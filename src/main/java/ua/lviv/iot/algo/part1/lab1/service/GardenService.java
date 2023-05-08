@@ -13,10 +13,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 @Service
 public final class GardenService {
-    private Map<Integer, Garden> gardens = new HashMap<>();
+    private Map<Integer, BotanicGarden> gardens = new HashMap<>();
     private AtomicInteger idCounter = new AtomicInteger();
-
-    private static GardenService defaultService = new GardenService();
 
 
     private GardenService() {

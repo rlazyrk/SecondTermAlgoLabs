@@ -1,8 +1,9 @@
 package ua.lviv.iot.algo.part1.lab1.models;
 
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.BeforeAll;
+
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -11,8 +12,8 @@ public class GardenTest {
     static BotanicGarden emptyTestGarden;
     static BotanicGarden testGarden;
 
-    @BeforeAll
-    public static void setUp() {
+    @BeforeEach
+    public void setUp() {
         emptyTestGarden = new BotanicGarden();
         testGarden = new BotanicGarden(14.44, 7, 71,1);
     }
@@ -55,7 +56,7 @@ public class GardenTest {
 
     @Test
     public void testTestToString() {
-        String expected = "BotanicGarden(super=Garden(areaInSquareMeter=147.11, numberOfFlowers=100, id=null), numberOfGreenhouse=0)";
+        String expected = "BotanicGarden(super=Garden(areaInSquareMeter=0.0, numberOfFlowers=0), numberOfGreenhouse=0, id=null)";
         assertEquals(expected, emptyTestGarden.toString());
     }
 }

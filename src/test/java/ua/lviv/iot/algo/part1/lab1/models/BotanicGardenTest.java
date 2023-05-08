@@ -60,7 +60,7 @@ public class BotanicGardenTest {
 
     @Test
     public void testToString() {
-        String expected = "BotanicGarden(super=Garden(areaInSquareMeter=0.0, numberOfFlowers=0, id=null), numberOfGreenhouse=0)";
+        String expected = "BotanicGarden(super=Garden(areaInSquareMeter=0.0, numberOfFlowers=0), numberOfGreenhouse=0, id=null)";
         assertEquals(expected, emptyTestGarden.toString());
     }
 }

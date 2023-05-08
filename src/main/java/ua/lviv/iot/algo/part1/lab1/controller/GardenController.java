@@ -29,10 +29,7 @@ public final class GardenController {
 
     @GetMapping(path = "/{id}")
     public ResponseEntity getBotanicGarden(@PathVariable("id") final Integer id) {
-        if (service.findById(id) != null) {
-            return ResponseEntity.ok(service.findById(id));
-        }
-        return ResponseEntity.notFound().build();
+        return service.findById(id) !=null ?  ResponseEntity.ok(service.findById(id)) :  ResponseEntity.notFound().build();
     }
 
     @PostMapping

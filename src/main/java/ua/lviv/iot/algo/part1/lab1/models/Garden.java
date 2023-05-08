@@ -15,7 +15,7 @@ import net.minidev.json.annotate.JsonIgnore;
 public abstract class Garden {
     private double areaInSquareMeter;
     private int numberOfFlowers;
-    private Integer id;
+
 
     public abstract boolean hasOrchard();
 

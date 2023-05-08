@@ -13,6 +13,7 @@ import lombok.ToString;
 @ToString(callSuper = true)
 public final class BotanicGarden extends Garden {
     private int numberOfGreenhouse;
+    private Integer id;
 
     public void buildGreenhouse() {
         setNumberOfGreenhouse(getNumberOfGreenhouse() + 1);
@@ -49,8 +50,10 @@ public final class BotanicGarden extends Garden {
 
     public BotanicGarden(final double area,
                          final int numberOfGreenhouse,
-                         final int numberOfFlower, final Integer id) {
-        super(area, numberOfFlower, id);
+                         final int numberOfFlower,
+                         final Integer id) {
+        super(area, numberOfFlower);
         this.numberOfGreenhouse = numberOfGreenhouse;
+        this.id = id;
     }
 }
