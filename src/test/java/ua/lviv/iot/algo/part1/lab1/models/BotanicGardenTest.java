@@ -1,7 +1,7 @@
 package ua.lviv.iot.algo.part1.lab1.models;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.BeforeAll;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -10,15 +10,15 @@ public class BotanicGardenTest {
     static BotanicGarden emptyTestGarden;
     static BotanicGarden testGarden;
 
-    @BeforeAll
-    public static void setUp() {
+    @BeforeEach
+    public void setUp() {
         emptyTestGarden = new BotanicGarden();
         testGarden = new BotanicGarden(14.44, 7, 71,1);
     }
 
     @Test
     public void buildGreenhouse() {
-        int expected = 7;
+        int expected = 8;
         testGarden.buildGreenhouse();
         assertEquals(expected, testGarden.getNumberOfGreenhouse());
     }
