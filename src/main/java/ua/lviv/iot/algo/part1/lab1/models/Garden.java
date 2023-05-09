@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Getter
 @Setter
@@ -15,6 +16,7 @@ public abstract class Garden {
     private double areaInSquareMeter;
     private int numberOfFlowers;
 
+
     public abstract boolean hasOrchard();
 
     public abstract boolean hasVegetableGarden();
@@ -22,6 +24,7 @@ public abstract class Garden {
     /**
      * give us header of the fields of this class
      */
+    @JsonIgnore
     public String getHeaders() {
         return "areaInSquareMeter, numberOfFlowers";
     }

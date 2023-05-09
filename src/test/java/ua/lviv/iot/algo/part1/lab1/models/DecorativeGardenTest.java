@@ -1,15 +1,16 @@
 package ua.lviv.iot.algo.part1.lab1.models;
 
-import junit.framework.TestCase;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-public class DecorativeGardenTest extends TestCase {
+import static org.junit.jupiter.api.Assertions.*;
+
+public class DecorativeGardenTest {
 
     DecorativeGarden emptyTestGarden;
     DecorativeGarden testGarden;
 
-    @Before
+    @BeforeEach
     public void setUp() {
         emptyTestGarden = new DecorativeGarden();
         testGarden = new DecorativeGarden(10, true, 17.11, 7);

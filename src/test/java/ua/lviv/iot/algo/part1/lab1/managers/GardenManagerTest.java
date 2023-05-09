@@ -1,8 +1,11 @@
 package ua.lviv.iot.algo.part1.lab1.managers;
 
-import junit.framework.TestCase;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+
 import ua.lviv.iot.algo.part1.lab1.models.BotanicGarden;
 import ua.lviv.iot.algo.part1.lab1.models.FarmGarden;
 import ua.lviv.iot.algo.part1.lab1.models.Garden;
@@ -11,17 +14,17 @@ import ua.lviv.iot.algo.part1.lab1.models.UniversityGarden;
 import java.util.LinkedList;
 import java.util.List;
 
-public class GardenManagerTest extends TestCase {
+public class GardenManagerTest {
 
     List<Garden> testList;
     UniversityGarden garden3;
     FarmGarden garden2;
     BotanicGarden garden1;
 
-    @Before
+    @BeforeEach
     public void setUp() {
         testList = new LinkedList<Garden>();
-        garden1 = new BotanicGarden(11, 25, 101);
+        garden1 = new BotanicGarden(11, 25, 101,1);
         garden2 = new FarmGarden(11, 25, 25, 103);
         garden3 = new UniversityGarden(24, 99, 24);
     }
